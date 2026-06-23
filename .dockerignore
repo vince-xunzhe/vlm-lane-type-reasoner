@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
+.runtime/
+.env
+.env.*
+data/outputs/*
+!data/outputs/README.md
+**/*records.jsonl
+**/*.log
+**/*.pid
+**/panels/

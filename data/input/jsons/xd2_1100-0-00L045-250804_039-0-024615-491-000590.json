@@ -1,0 +1,165 @@
+{
+  "lanes": [
+    {
+      "id": 0,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          208,
+          1138
+        ],
+        [
+          989,
+          828
+        ],
+        [
+          1140,
+          757
+        ]
+      ],
+      "lane_type": "可变"
+    },
+    {
+      "id": 1,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1269,
+          1087
+        ],
+        [
+          1302,
+          812
+        ],
+        [
+          1310,
+          754
+        ]
+      ],
+      "lane_type": "正常"
+    },
+    {
+      "id": 4,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1913,
+          1035
+        ],
+        [
+          1529,
+          794
+        ],
+        [
+          1448,
+          742
+        ]
+      ],
+      "lane_type": "自行车"
+    }
+  ],
+  "cues": [
+    {
+      "id": 0,
+      "cue_type": "lane_boundary",
+      "content": "single_white_dash",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          900,
+          1068
+        ],
+        [
+          1137,
+          854
+        ],
+        [
+          1230,
+          752
+        ]
+      ],
+      "related_lanes": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "cue_type": "lane_boundary",
+      "content": "single_white_solid",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1777,
+          1172
+        ],
+        [
+          1465,
+          824
+        ],
+        [
+          1389,
+          750
+        ]
+      ],
+      "related_lanes": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 5,
+      "cue_type": "lane_boundary",
+      "content": "zigzag_line",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          0,
+          1014
+        ],
+        [
+          420,
+          917
+        ],
+        [
+          1021,
+          754
+        ]
+      ],
+      "related_lanes": [
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "cue_type": "road_symbol",
+      "content": "bicycle_icon",
+      "grounding_type": "box",
+      "grounding": [
+        1791,
+        1023,
+        1919,
+        1154
+      ],
+      "related_lanes": [
+        4
+      ]
+    }
+  ],
+  "reviewed_histroy": [
+    {
+      "reviewer": "taoyinghui",
+      "reviewed_at": "2026-04-22 14:49:45",
+      "summary": "lane: 0.grounding: modify; lane: 1.grounding: modify; lane: 4.grounding: modify; lane: 2: delete; lane: 3: delete; laneBoundaryCue: 0.grounding: modify; laneBoundaryCue: 2.grounding: modify; laneBoundaryCue: 5: add; laneBoundaryCue: 1: delete; laneBoundaryCue: 3: delete",
+      "review_status": "已修正",
+      "note": ""
+    },
+    {
+      "reviewer": "hyc",
+      "reviewed_at": "2026-04-29 11:30:36",
+      "summary": "无字段变化",
+      "review_status": "通过",
+      "note": ""
+    }
+  ]
+}

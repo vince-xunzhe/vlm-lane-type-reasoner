@@ -1,0 +1,114 @@
+{
+  "lanes": [
+    {
+      "id": 0,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          980,
+          1153
+        ],
+        [
+          1003,
+          699
+        ]
+      ],
+      "lane_type": "正常"
+    },
+    {
+      "id": 1,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1908,
+          1145
+        ],
+        [
+          1104,
+          698
+        ]
+      ],
+      "lane_type": "自行车"
+    }
+  ],
+  "cues": [
+    {
+      "id": 0,
+      "cue_type": "lane_boundary",
+      "content": "single_white_solid",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          356,
+          1175
+        ],
+        [
+          831,
+          793
+        ],
+        [
+          946,
+          700
+        ]
+      ],
+      "related_lanes": [
+        0
+      ]
+    },
+    {
+      "id": 1,
+      "cue_type": "lane_boundary",
+      "content": "single_white_solid",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1590,
+          1175
+        ],
+        [
+          1251,
+          873
+        ],
+        [
+          1063,
+          700
+        ]
+      ],
+      "related_lanes": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "cue_type": "road_symbol",
+      "content": "bicycle_icon",
+      "grounding_type": "box",
+      "grounding": [
+        1456,
+        936,
+        1785,
+        1015
+      ],
+      "related_lanes": [
+        1
+      ]
+    }
+  ],
+  "reviewed_histroy": [
+    {
+      "reviewer": "zhouaoyun",
+      "reviewed_at": "2026-04-22 14:42:48",
+      "summary": "lane: 0.grounding: modify; lane: 1.grounding: modify; laneBoundaryCue: 0.grounding: modify; laneBoundaryCue: 1.grounding: modify; laneBoundaryCue: 1.related_lanes: modify",
+      "review_status": "已修正",
+      "note": ""
+    },
+    {
+      "reviewer": "latteSYB",
+      "reviewed_at": "2026-04-29 11:25:29",
+      "summary": "无字段变化",
+      "review_status": "通过",
+      "note": ""
+    }
+  ]
+}

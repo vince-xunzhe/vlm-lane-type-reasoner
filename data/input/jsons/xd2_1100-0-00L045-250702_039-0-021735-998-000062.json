@@ -1,0 +1,110 @@
+{
+  "lanes": [
+    {
+      "id": 0,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1896,
+          1150
+        ],
+        [
+          1421,
+          842
+        ]
+      ],
+      "lane_type": "自行车"
+    },
+    {
+      "id": 1,
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1047,
+          1166
+        ],
+        [
+          1027,
+          832
+        ]
+      ],
+      "lane_type": "正常"
+    }
+  ],
+  "cues": [
+    {
+      "id": 0,
+      "cue_type": "lane_boundary",
+      "content": "single_white_solid",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          1673,
+          1181
+        ],
+        [
+          1271,
+          860
+        ]
+      ],
+      "related_lanes": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "cue_type": "lane_boundary",
+      "content": "single_white_solid",
+      "grounding_type": "line",
+      "grounding": [
+        [
+          456,
+          1143
+        ],
+        [
+          671,
+          953
+        ],
+        [
+          802,
+          830
+        ]
+      ],
+      "related_lanes": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "cue_type": "road_symbol",
+      "content": "bicycle_icon",
+      "grounding_type": "box",
+      "grounding": [
+        1590,
+        977,
+        1919,
+        1095
+      ],
+      "related_lanes": [
+        0
+      ]
+    }
+  ],
+  "reviewed_histroy": [
+    {
+      "reviewer": "zhouaoyun",
+      "reviewed_at": "2026-04-20 14:50:56",
+      "summary": "lane: 0.grounding: modify; lane: 1.grounding: modify; laneBoundaryCue: 0.grounding: modify; laneBoundaryCue: 0.related_lanes: modify; laneBoundaryCue: 2: add",
+      "review_status": "已修正",
+      "note": ""
+    },
+    {
+      "reviewer": "lisong",
+      "reviewed_at": "2026-04-28 19:56:02",
+      "summary": "无字段变化",
+      "review_status": "通过",
+      "note": ""
+    }
+  ]
+}

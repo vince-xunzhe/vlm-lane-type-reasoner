@@ -1,0 +1,16 @@
+{
+  "records": 395,
+  "correct": 389,
+  "accuracy": 0.98481,
+  "pred_distribution": {
+    "normal": 196,
+    "bicycle": 31,
+    "variable": 102,
+    "bus": 24,
+    "tidal": 42
+  },
+  "model_path": "/nas/nfs/large-model/vince/data/vlm-grounding-reasoner-release/models/pipeline_alpha_clean85_extra_trees_remote.pkl",
+  "runtime": {
+    "numpy": "1.26.0"
+  }
+}

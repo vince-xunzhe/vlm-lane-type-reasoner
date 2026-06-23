@@ -1,0 +1,60 @@
+{
+  "default_profile": "prod_qwen36_27b",
+  "profiles": {
+    "prod_qwen36_27b": {
+      "description": "Production OpenAI-compatible Qwen3.6-27B service. Matches image_grounding_demo.py: OpenAI(base_url=..., api_key='sk-no-key-required').",
+      "client_type": "openai_compatible",
+      "base_url": "http://192.167.20.200:8000/v1",
+      "api_key": "sk-no-key-required",
+      "model": "qwen3.6-27b",
+      "auth_scheme": "bearer",
+      "timeout": 660,
+      "response_format": false,
+      "enable_thinking": true,
+      "image_max_side": 900,
+      "image_jpeg_quality": 75
+    },
+    "eas_qwen36_27b_template": {
+      "description": "Alibaba PAI-EAS official Qwen3.6-27B deployment template. Secret stays in EAS_TOKEN.",
+      "client_type": "openai_compatible",
+      "base_url": "http://1505043501901530.vpc.cn-wulanchabu.pai-eas.aliyuncs.com/api/predict/qwen3_6_27b",
+      "api_key_env": "EAS_TOKEN",
+      "model": "Qwen3.6-27B",
+      "auth_scheme": "raw",
+      "timeout": 660,
+      "response_format": {
+        "type": "json_object"
+      },
+      "enable_thinking": false,
+      "image_max_side": 900,
+      "image_jpeg_quality": 75
+    },
+    "eas_qwen36_27b": {
+      "description": "Existing Alibaba PAI-EAS Qwen service. Secrets stay in environment variables.",
+      "client_type": "openai_compatible",
+      "base_url_env": "EAS_ENDPOINT",
+      "api_key_env": "EAS_TOKEN",
+      "model_env": "QWEN_MODEL",
+      "auth_scheme": "raw",
+      "timeout": 180,
+      "response_format": {
+        "type": "json_object"
+      },
+      "enable_thinking": false
+    },
+    "local_qwen36_27b_q4_16k": {
+      "description": "Internal qwen3.6-27b-q4-16k service on RTX 3090 workers; alpha packet multi-image requests use client-side JPEG compression and the maintained 1200s gateway budget.",
+      "client_type": "openai_compatible",
+      "base_url": "http://10.53.11.39:18000",
+      "model": "qwen3.6-27b-q4-16k",
+      "auth_scheme": "none",
+      "timeout": 1320,
+      "response_format": {
+        "type": "json_object"
+      },
+      "enable_thinking": false,
+      "image_max_side": 640,
+      "image_jpeg_quality": 65
+    }
+  }
+}
