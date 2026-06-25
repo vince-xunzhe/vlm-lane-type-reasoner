@@ -406,3 +406,54 @@ Artifacts:
   `/nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316/3702-1-00L025-260316_r_LaneCenterLine/vis_debug/round-10-sign-lateral-band/association_3d/association_overlay/040-0-073340-889-000687.jpg`
 - Motivating BEV debug:
   `/nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316/3702-1-00L025-260316_r_LaneCenterLine/vis_debug/round-10-sign-lateral-band/association_3d/bev_debug/040-0-073340-889-000687.jpg`
+
+## 2026-06-25 - `round-11-depth-aware-temp-decision`
+
+Goal: produce a temporary downstream-compatible `output_lanes_attr.json` from
+depth-aware association rules without retraining the Clean85 decision head.
+
+Changes:
+
+- Added a dedicated temporary decision folder:
+  `code/depth_aware_temp_decision/`.
+- The temporary path runs or reuses `probe_3d_lane_association.py`, converts
+  associated object evidence into canonical per-frame `center_line_2d` lane
+  attributes, then reuses `output_to_final_LaneType_output.py` to preserve the
+  downstream `output_lanes_attr.json` format.
+- The policy is intentionally conservative: every lane defaults to `normal`,
+  and only active depth-aware object evidence overrides a lane to `bus`,
+  `bicycle`, or `variable`.
+- This is a diagnostic/debug bridge. It does not use Qwen packet evidence and
+  does not modify or retrain `pipeline_alpha_clean85_extra_trees.pkl`.
+
+Command:
+
+```bash
+/nas/nfs/large-model/vince/code/vlm-lane-type-reasoner/code/depth_aware_temp_decision/run_depth_aware_temp_decision.sh \
+  --las-dir /nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316 \
+  --round-name round-11-depth-aware-temp-decision \
+  --workers 4 \
+  --overwrite
+```
+
+Result:
+
+- Association probe: 14 selected frames, 14 ok, active objects 9, filtered
+  objects 7.
+- Standard output conversion: 1359 frame JSON files, 958 non-empty frames, 2703
+  lanes.
+- Final temporary distribution: `normal=2694`, `bus=6`, `bicycle=3`.
+- Frames with special evidence: 9.
+- Motivating frame `040-0-073340-889-000687`: final interface writes lane `108`
+  as bus (`Attr=1`) while lane `107` and lane `106` remain normal (`Attr=0`).
+
+Artifacts:
+
+- Summary JSON:
+  `/nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316/3702-1-00L025-260316_r_LaneCenterLine/inference/round-11-depth-aware-temp-decision/depth_aware_temp_decision/summary.json`
+- Per-frame canonical lane attributes:
+  `/nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316/3702-1-00L025-260316_r_LaneCenterLine/inference/round-11-depth-aware-temp-decision/depth_aware_temp_decision/center_line_2d`
+- Final downstream LaneType output:
+  `/nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316/3702-1-00L025-260316_r_LaneCenterLine/output/round-11-depth-aware-temp-decision/output_lanes_attr.json`
+- Visual index:
+  `/nas/nfs/large-model/vince/data/xd-online-las-data/3702-1-00L025-260316/3702-1-00L025-260316_r_LaneCenterLine/vis_debug/round-11-depth-aware-temp-decision/depth_aware_temp_decision/index.html`
