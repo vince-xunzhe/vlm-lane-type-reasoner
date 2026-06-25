@@ -113,3 +113,25 @@ folder:
 ```text
 <las_dir>/<las_name>_r_LaneCenterLine/output/output_lanes_attr.json
 ```
+
+Visual debug artifacts are generated automatically after LAS inference:
+
+```text
+<las_dir>/<las_name>_r_LaneCenterLine/vis_debug/index.html
+```
+
+Set `RUN_VISUALIZATION=0` to skip this step.  For quick checks, use
+`VISUALIZATION_LIMIT=<n>` or `VISUALIZATION_FRAMES=<frame_id[,frame_id...]>`.
+If `<las_dir>/<las_name>_r_LaneCenterLine/visualize_instances.yaml`
+exists, only the frame stems listed there are visualized; if it is missing,
+all discovered frames are visualized.
+
+For iterative experiments, set `ROUND_NAME=round-1` or `AUTO_ROUND=1`.
+Round mode writes inference and visualization artifacts under:
+
+```text
+<las_dir>/<las_name>_r_LaneCenterLine/inference/<round_name>/output/
+<las_dir>/<las_name>_r_LaneCenterLine/inference/<round_name>/panels/
+<las_dir>/<las_name>_r_LaneCenterLine/output/<round_name>/output_lanes_attr.json
+<las_dir>/<las_name>_r_LaneCenterLine/vis_debug/<round_name>/index.html
+```
